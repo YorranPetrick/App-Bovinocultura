@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+    
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -20,6 +20,9 @@ flutter:
   assets:
     - lib/image/logo.png
     - lib/image/browser.png
+    - lib/image/fazenda.png
+    - lib/image/grafico.png
+    - lib/image/home.png
   # fonts:
   #   - family: Schyler
   #     fonts:

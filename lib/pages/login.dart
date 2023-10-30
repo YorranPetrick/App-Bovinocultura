@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app_admfazenda/home.dart';
+import '../class/imageFromContext.dart';
+import 'home.dart';
 
 class loginPage extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _loginPageState extends State<loginPage> {
               padding: const EdgeInsets.only(top: 15),
               child: Column(
                 children: [
-                  _imageFromContext(
+                  imageFromContext(
                     context,
                     'lib/image/logo.png',
                     0.8,
@@ -59,7 +60,7 @@ class _loginPageState extends State<loginPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ElevatedCardExample(),
+                            builder: (context) => const Home(),
                           ),
                         );
                       },
@@ -85,13 +86,13 @@ class _loginPageState extends State<loginPage> {
                   _sizedbox(context, 0.05),
                   //
                   const Padding(
-                    padding:  EdgeInsets.all(0.8),
-                    child:  Text('OR'),
+                    padding: EdgeInsets.all(0.8),
+                    child: Text('OR'),
                   ),
                   //
                   //_sizedbox(context, 0.1),
                   //
-                  _imageFromContext(context, 'lib/image/browser.png', 0.2, 0.2),
+                  imageFromContext(context, 'lib/image/browser.png', 0.2, 0.2),
                 ],
               ),
             ),
@@ -127,16 +128,3 @@ SizedBox _sizedbox(BuildContext context, double size) {
 }
 
 // Criação de um metodo para retornar Imagens responsivas
-Image _imageFromContext(
-    BuildContext context, String path, double sizewidth, double sizeheight) {
-  double width = MediaQuery.of(context).size.width *
-      sizewidth; // Use o whidth do parametro
-  double height = MediaQuery.of(context).size.height *
-      sizeheight; // Use o height do parametro
-
-  return Image(
-    image: AssetImage(path), // Use o path da imagem
-    width: width,
-    height: height,
-  );
-}
